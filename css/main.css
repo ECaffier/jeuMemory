@@ -87,6 +87,37 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+
+   /* Header*/
+   h1{
+     background-color: #999;
+     color:white;
+     margin: 0;
+     padding: 5vw;
+   }
+   /*Main*/
+   main{
+     min-height: 80vh;
+     background-color: grey;
+     padding-left: 1.5em;
+
+   }
+   .cardsImage{
+     height: 30vh;
+     width: 12vw;
+     margin : 1em;
+     cursor: pointer;
+   }
+
+   /*Footer*/
+   .bottom{
+     background-color: gray;
+     color: white;
+   }
+   .bottomRs{
+    font-size: 2em;
+    margin-top: 1em;
+  }
 /* ==========================================================================
    Helper classes
    ========================================================================== */
