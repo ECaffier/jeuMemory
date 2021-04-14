@@ -90,28 +90,32 @@ textarea {
 
    /* Header*/
    h1{
-     background-color: #999;
-     color:white;
+     background-color: #6C758E;
+     color:#755229;
      margin: 0;
-     padding: 5vw;
+     padding: 2em;
    }
    /*Main*/
+   h2{
+     margin-top: 0;
+   }
    main{
      min-height: 80vh;
-     background-color: grey;
+     background-color: #C7DDFD;
      padding-left: 1.5em;
+     padding-top: 1em;
 
    }
    .cardsImage{
-     height: 30vh;
-     width: 12vw;
+     height: 40vh;
+     width: 14vw;
      margin : 1em;
      cursor: pointer;
    }
 
    /*Footer*/
    .bottom{
-     background-color: gray;
+     background-color: #6C758E;
      color: white;
    }
    .bottomRs{
