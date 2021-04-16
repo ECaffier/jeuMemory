@@ -113,6 +113,15 @@ textarea {
      cursor: pointer;
    }
 
+   .newClasss{
+
+    content:url("../img/Shaman.png");
+   }
+   .backCardClass{
+
+    content:url("../img/backCard.png");
+   }
+
    /*Footer*/
    .bottom{
      background-color: #6C758E;

@@ -1,17 +1,63 @@
+
+// Var for the face of the card;
 let gameCard = ["img/Warlock.png","img/Warrior.png","img/Druid.png","img/Shaman.png","img/Paladin.png","img/Hunter.png","img/Warlock.png","img/Warrior.png","img/Druid.png","img/Shaman.png","img/Paladin.png","img/Hunter.png"];
-// let backGameCard =["img/backCard.png","img/backCard.png","img/backCard.png","img/backCard.png","img/backCard.png","img/backCard.png","img/backCard.png","img/backCard.png","img/backCard.png","img/backCard.png","img/backCard.png","img/backCard.png","img/backCard.png","img/backCard.png", ];
+// Var for the back of the card
+let backGameCard=["img/backCard.png"]
+// Var for the winning card
+let winGameCard=["img/trouve.jpg"]
+// Var to stock cards and verif if both card are the same or not
 let gameVerif =[];
-let gameEnd=0;
+// Var to end the game
+let gameEnd=[];
+
+// This function is showing the face of the card on click, the loop allow the player to return the card he want to by clicking on it,
+// add the card to the table for compare, launch function compare if there is 2 cards on the table for compare.
+// finaly it add a class that allow me to do what i want on the clicked card.
+
+function playMemory(){
+    let useUtilityCard = document.getElementsByClassName("utilityCard");
+    for(let i=0;i<gameCard.length; i++){ 
+        useUtilityCard[i].onclick = function(){
+            this.src= gameCard[i];
+            this.classList.add("newClasss");
+            gameVerif.push(gameCard[i]);
+            if (gameVerif.length == 2){
+                setTimeout("compare()", 1000);
+            }
+        };
+    }
+}
+playMemory();
+
+// This function compare the 2 cards picked and change the img src for the winner or the loser one.
+function compare(){
+    if(gameVerif[0] === gameVerif[1]){
+        let list = document.querySelectorAll('.newClasss');
+        for (let k=0; k<list.length; k++){
+            list[k].src=winGameCard[0];
+            list[k].classList.remove("newClasss");
+        } 
+    }
+    else{
+        let list = document.querySelectorAll('.newClasss');
+        for (let j=0; j<list.length; j++){
+            list[j].src=backGameCard[0];
+            list[j].classList.remove("newClasss");
+        }   
+    }
+        gameVerif =[];
+}
 
 
+
+// I let here all the path i used to do this function :
 
 // function revealCard1(){
-//     let kk = document.getElementsByClassName("kkk");
+//     let kk = document.getElementsByClassName("utilityCard");
 //     kk.src = gameCard[0];
 //     gameVerif.push(gameCard[0])
 //     gameEnd++;
 //    setTimeout("compare()", 1500);
-
 // }
 
 // function revealCard2(){
@@ -19,68 +65,23 @@ let gameEnd=0;
 //     gameVerif.push(gameCard[0])
 //     gameEnd.push(gameCard[0])
 //     setTimeout("compare()", 1500);
-
 // }
 
+// function addClassToImage() {
+//     var x = document.getElementsByClassName("newClass");
+//     var j;
+//     for (j = 0; j < x.length; j++) {
+//       x[j].classList.add("newClasss");
+//     }
+//   }
 
-let eee = document.getElementsByClassName("kkk");
-
-for(let i=0;i<gameCard.length; i++){   
-    eee[i].onclick = function(){
-        this.src= gameCard[i];
-        gameVerif.push(gameCard[i]);
-        if (gameVerif.length === 2){
-            if(gameVerif[0] === gameVerif[1]){
-            // document.getElementById("card1").onclick=null;
-            this.src="img/grey.png";
-            // document.getElementById("card2").onclick=null;
-            this.src="img/grey.png";
-            }
-            else{
-                alert("rpot");
-                this.src="img/backCard.png";
-                this.src="img/backCard.png";
-            }
-        gameVerif =[];
-        }
-    };
-}
-
-
-
-function compare(){
-    if (gameVerif.length === 2){
-        if(gameVerif[0] === gameVerif[1]){
-            alert("prout");
-        // document.getElementById("card1").onclick=null;
-        eee[i].src="img/grey.png";
-        // document.getElementById("card2").onclick=null;
-        eee.src="img/grey.png";
-        }
-        else{
-            eee.src="img/backCard.png";
-            eee.src="img/backCard.png";
-        }
-    gameVerif =[];
-    }
-}
-
-
-
-// for(i=0;i<eee.length; i++){
-    
-//     eee[i].onclick=function(){
+// for(i=0;i<useUtilityCard.length; i++){   
+//     useUtilityCard[i].onclick=function(){
 //         for (element of gameCard){
 //             console.log(element[i]);
 //         }
-         
-
 //     };
 // }
-
-
-
-
 
 // function showCard(){
 //     for (i=0; i<gameCard.length; i++){
@@ -93,17 +94,8 @@ function compare(){
 //         this[i].src= gameCard[i];
 //         gameVerif.push(gameCard[i]);
 //         setTimeout("compare()", 1500);
-    
-          
+             
 // }
-
-
-
-
-
-
-
-
 
 // function showBackCard(){
 //     let backCard = document.querySelector('article')
