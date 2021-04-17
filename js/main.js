@@ -1,6 +1,7 @@
-
 // Var for the face of the card;
-let gameCard = ["img/Warlock.png","img/Warrior.png","img/Druid.png","img/Shaman.png","img/Paladin.png","img/Hunter.png","img/Warlock.png","img/Warrior.png","img/Druid.png","img/Shaman.png","img/Paladin.png","img/Hunter.png"];
+let gameCardNoShuffle = ["img/Warlock.png","img/Warrior.png","img/Druid.png","img/Shaman.png","img/Paladin.png","img/Hunter.png","img/Warlock.png","img/Warrior.png","img/Druid.png","img/Shaman.png","img/Paladin.png","img/Hunter.png"];
+//This random the array
+let gameCard = gameCardNoShuffle.sort((a, b) => 0.5 - Math.random());
 // Var for the back of the card
 let backGameCard=["img/backCard.png"]
 // Var for the winning card
@@ -8,7 +9,7 @@ let winGameCard=["img/WinnerCard.png"]
 // Var to stock cards and verif if both card are the same or not
 let gameVerif =[];
 // Var to end the game
-let gameEnd=[];
+let gameEnd=0;
 
 // This function is showing the face of the card on click, the loop allow the player to return the card he want to by clicking on it,
 // add the card to the table for compare, launch function compare if there is 2 cards on the table for compare.
@@ -23,23 +24,22 @@ function playMemory(){
             gameVerif.push(gameCard[i]);
             if (gameVerif.length == 2){
                 setTimeout("compare()", 1000);
-                if (gameEnd < 10){
-                    console.log("flute");
-                }
-                else{
-                    alert("pouet");
+                if (gameEnd > 8 ){
+                    endGame();
                 }
             }
         };
     }
 }
-playMemory();
+// playMemory();
 
 // This function compare the 2 cards picked and change the img src for the winner or the loser one.
 function compare(){
     if(gameVerif[0] === gameVerif[1]){
         let list = document.querySelectorAll('.tamponClass');
         for (let k=0; k<list.length; k++){
+            list[k].style.transform = "rotate(2deg)";
+            // list[k].classList.add("greyScale");
             list[k].src=winGameCard[0];
             list[k].classList.remove("tamponClass");
             gameEnd++;
@@ -60,6 +60,14 @@ function compare(){
 
 function wannaPlay(){
     document.getElementById("wannaPlay").style.display="none";
+    playMemory();
+}
+
+function endGame(){
+    document.getElementById("wannaReplay").style.display="block";
+}
+function rejouer(){
+    location.reload();
 }
 
 

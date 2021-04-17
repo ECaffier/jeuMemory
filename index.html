@@ -30,14 +30,20 @@
   <main>
     <div class="wannaPlay" id="wannaPlay">
       <div class="row playOverlay">
-        <p> Voulez-vous jouer ?</p>
+        <p> Pour jouer cliquez ici</p>
         <button  class="btn btn-play col-12" onclick="wannaPlay()">Jouer</button>
+      </div>
+    </div>
+    <div class="wannaPlay" id="wannaReplay" style="display:none">
+      <div class="row playOverlay">
+        <p> La partie est fini, bien joué ! Souhaitez-vous rejouer ?</p>
+        <button  class="btn btn-play col-12" onclick="rejouer()">Rejouer</button>
       </div>
     </div>
     <article>
       <h2>Notre jeu Warcraft</h2>
         <div class="row " id="backCard">
-          <img  class="backCardClass utilityCard cardsImage " alt="Back of the card" >
+          <img  id="abc" class="backCardClass utilityCard cardsImage " alt="Back of the card" >
           <img  class="backCardClass utilityCard cardsImage " alt="Back of the card" >
           <img  class="backCardClass utilityCard cardsImage " alt="Back of the card" >
           <img  class="backCardClass utilityCard cardsImage " alt="Back of the card" >
