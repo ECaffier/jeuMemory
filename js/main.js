@@ -4,7 +4,7 @@ let gameCard = ["img/Warlock.png","img/Warrior.png","img/Druid.png","img/Shaman.
 // Var for the back of the card
 let backGameCard=["img/backCard.png"]
 // Var for the winning card
-let winGameCard=["img/trouve.jpg"]
+let winGameCard=["img/WinnerCard.png"]
 // Var to stock cards and verif if both card are the same or not
 let gameVerif =[];
 // Var to end the game
@@ -19,10 +19,16 @@ function playMemory(){
     for(let i=0;i<gameCard.length; i++){ 
         useUtilityCard[i].onclick = function(){
             this.src= gameCard[i];
-            this.classList.add("newClasss");
+            this.classList.add("tamponClass");
             gameVerif.push(gameCard[i]);
             if (gameVerif.length == 2){
                 setTimeout("compare()", 1000);
+                if (gameEnd < 10){
+                    console.log("flute");
+                }
+                else{
+                    alert("pouet");
+                }
             }
         };
     }
@@ -32,21 +38,32 @@ playMemory();
 // This function compare the 2 cards picked and change the img src for the winner or the loser one.
 function compare(){
     if(gameVerif[0] === gameVerif[1]){
-        let list = document.querySelectorAll('.newClasss');
+        let list = document.querySelectorAll('.tamponClass');
         for (let k=0; k<list.length; k++){
             list[k].src=winGameCard[0];
-            list[k].classList.remove("newClasss");
+            list[k].classList.remove("tamponClass");
+            gameEnd++;
+            console.log(gameEnd);
         } 
     }
     else{
-        let list = document.querySelectorAll('.newClasss');
+        let list = document.querySelectorAll('.tamponClass');
         for (let j=0; j<list.length; j++){
             list[j].src=backGameCard[0];
-            list[j].classList.remove("newClasss");
+            list[j].classList.remove("tamponClass");
         }   
     }
         gameVerif =[];
 }
+
+//Function to play
+
+function wannaPlay(){
+    document.getElementById("wannaPlay").style.display="none";
+}
+
+
+
 
 
 
@@ -71,7 +88,7 @@ function compare(){
 //     var x = document.getElementsByClassName("newClass");
 //     var j;
 //     for (j = 0; j < x.length; j++) {
-//       x[j].classList.add("newClasss");
+//       x[j].classList.add("tamponClass");
 //     }
 //   }
 
