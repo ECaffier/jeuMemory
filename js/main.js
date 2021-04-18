@@ -23,6 +23,7 @@ function playMemory(){
             this.classList.add("tamponClass");
             gameVerif.push(gameCard[i]);
             if (gameVerif.length == 2){
+                blockPlay();
                 setTimeout("compare()", 1000);
                 if (gameEnd > 8 ){
                     endGame();
@@ -31,22 +32,21 @@ function playMemory(){
         };
     }
 }
-// playMemory();
-
 // This function compare the 2 cards picked and change the img src for the winner or the loser one.
+
 function compare(){
     if(gameVerif[0] === gameVerif[1]){
         let list = document.querySelectorAll('.tamponClass');
         for (let k=0; k<list.length; k++){
             list[k].style.transform = "rotate(2deg)";
-            // list[k].classList.add("greyScale");
-            list[k].src=winGameCard[0];
+            // list[k].src=winGameCard[0];
             list[k].classList.remove("tamponClass");
             gameEnd++;
-            console.log(gameEnd);
+            letsPlay();
         } 
     }
     else{
+        letsPlay();
         let list = document.querySelectorAll('.tamponClass');
         for (let j=0; j<list.length; j++){
             list[j].src=backGameCard[0];
@@ -69,6 +69,13 @@ function endGame(){
 function rejouer(){
     location.reload();
 }
+function blockPlay(){
+    document.getElementById("blockPlay").style.display="block";
+}
+function letsPlay(){
+    document.getElementById("blockPlay").style.display="none";
+}
+
 
 
 

@@ -90,8 +90,8 @@ textarea {
 
    /* Header*/
    h1{
-     background-color: #6C758E;
-     color:#d3e0f3;
+     background-color: #61585D;
+     color:#B07324;
      font-family: 'Zen Dots', cursive;
      font-size : 2.5em;
      margin: 0;
@@ -101,12 +101,12 @@ textarea {
    h2{
      margin-top: 0;
      font-family: 'Zen Dots', cursive;
-     color: #383f52;
+     color: #61585D;
      padding: 1em;
    }
    main{
      min-height: 80vh;
-     background-color: #C7DDFD;
+     background-color: #B4A8AE;
    }
 
    .wannaPlay{
@@ -117,7 +117,7 @@ textarea {
     z-index: 10;
   }
   .wannaPlay div p{
-    color:#dfe9f8;
+    color:#B4A8AE;
     font-size :2em;
     display: flex;
     justify-content: center;
@@ -128,14 +128,14 @@ textarea {
     font-size: 1.5em;
   }
   .btn-play:hover{
-    background-color:#1f6b23;
-    color:#e2b93d;
+    background-color:#B07324;
+    color:#cabf9f;
   }
 
   .playOverlay{
     margin:3vh 3vw;
     padding: 10vh;
-    background-color: #6C758E;
+    background-color: #61585D;
     display: flex;
     justify-content: center;
   }
@@ -165,16 +165,16 @@ textarea {
 
    /*Footer*/
    .bottom{
-     background-color: #6C758E;
-     color: #C7DDFD;
+     background-color: #61585D;
+     color: #B4A8AE;
    }
    a{
      text-decoration: none;
-     color:#d9e3f3;
+     color:#B4A8AE;
      font-size: 2em;
    }
    a:hover{
-     color:#e2b93d;
+     color:#B07324;
 
    }
 
@@ -203,6 +203,21 @@ textarea {
   }
 
   @media screen and (min-width:1480px){
+
+    .cardsImage{
+      width : 12vw;
+      height: 48vh;
+      padding-left:0;
+    }
+
+    .playOverlay{
+      width: 33vw;
+      margin-top:15vh;
+      margin-left: 33vw;
+    }
+  }
+
+  @media screen and (min-width:1880px){
 
     .cardsImage{
       width : 13.5vw;
