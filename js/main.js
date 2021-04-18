@@ -31,9 +31,9 @@ function playMemory(){
         };
     }
 }
-// playMemory();
 
 // This function compare the 2 cards picked and change the img src for the winner or the loser one.
+
 function compare(){
     if(gameVerif[0] === gameVerif[1]){
         let list = document.querySelectorAll('.tamponClass');
@@ -42,7 +42,6 @@ function compare(){
             // list[k].src=winGameCard[0];
             list[k].classList.remove("tamponClass");
             gameEnd++;
-            console.log(gameEnd);
         } 
     }
     else{
