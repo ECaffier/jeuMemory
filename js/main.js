@@ -39,8 +39,7 @@ function compare(){
         let list = document.querySelectorAll('.tamponClass');
         for (let k=0; k<list.length; k++){
             list[k].style.transform = "rotate(2deg)";
-            // list[k].classList.add("greyScale");
-            list[k].src=winGameCard[0];
+            // list[k].src=winGameCard[0];
             list[k].classList.remove("tamponClass");
             gameEnd++;
             console.log(gameEnd);
